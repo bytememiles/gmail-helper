@@ -3,3 +3,6 @@ build/
 
 # Dependencies
 node_modules/
+
+# Extension pack (for distribution)
+extension_pack/
