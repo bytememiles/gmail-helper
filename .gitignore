@@ -1,0 +1,5 @@
+# Build output (load this folder in Chrome as unpacked extension)
+build/
+
+# Dependencies
+node_modules/

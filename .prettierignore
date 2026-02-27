@@ -1,0 +1,12 @@
+# Build output
+build/
+
+# Git and tooling
+.git/
+.cursor/
+node_modules/
+
+# Assets (binary)
+assets/
+*.jpg
+*.png

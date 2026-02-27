@@ -5,7 +5,7 @@ chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
   if (msg.type === "copyToClipboard" && typeof msg.text === "string") {
     navigator.clipboard.writeText(msg.text).then(
       () => sendResponse({ ok: true }),
-      (err) => sendResponse({ ok: false, error: err.message }),
+      (err) => sendResponse({ ok: false, error: err.message })
     );
     return true; // async response
   }

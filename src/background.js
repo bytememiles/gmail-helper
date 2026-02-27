@@ -22,7 +22,7 @@ function base64UrlDecode(str) {
       atob(padded)
         .split("")
         .map((c) => "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2))
-        .join(""),
+        .join("")
     );
   } catch {
     return atob(padded);
@@ -91,7 +91,7 @@ async function listGreenhouseSecurityMessages(token) {
   const q = `from:${GREENHOUSE_FROM} subject:Security code`;
   const list = await gmailApi(
     `/messages?q=${encodeURIComponent(q)}&maxResults=5`,
-    token,
+    token
   );
   return list.messages || [];
 }
@@ -216,7 +216,7 @@ function schedulePoll() {
   getOptions().then((opts) => {
     const minutes = Math.max(
       1,
-      Number(opts.pollIntervalMinutes) || DEFAULT_POLL_MINUTES,
+      Number(opts.pollIntervalMinutes) || DEFAULT_POLL_MINUTES
     );
     chrome.alarms.create(POLL_ALARM_NAME, { periodInMinutes: minutes });
   });
@@ -279,8 +279,8 @@ chrome.notifications.onButtonClicked.addListener(
             chrome.notifications.clear(notificationId);
             resolve();
           }, 2500);
-        },
+        }
       );
     });
-  },
+  }
 );

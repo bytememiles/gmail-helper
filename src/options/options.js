@@ -4,15 +4,13 @@
 const connectBtn = document.getElementById("connect-btn");
 const gmailStatus = document.getElementById("gmail-status");
 const showDesktopNotification = document.getElementById(
-  "show-desktop-notification",
+  "show-desktop-notification"
 );
 const showToast = document.getElementById("show-toast");
 const toastPosition = document.getElementById("toast-position");
 const pollInterval = document.getElementById("poll-interval");
 const saveBtn = document.getElementById("save-btn");
 const saveStatus = document.getElementById("save-status");
-
-const GMAIL_SCOPE = "https://www.googleapis.com/auth/gmail.readonly";
 
 async function loadOptions() {
   const opts = await chrome.storage.sync.get({
@@ -89,7 +87,6 @@ saveBtn.addEventListener("click", async () => {
   };
   await chrome.storage.sync.set(opts);
 
-  // Tell background to reschedule alarm
   chrome.runtime.sendMessage({ type: "reschedulePoll" }).catch(() => {});
 
   saveStatus.textContent = "Saved.";
