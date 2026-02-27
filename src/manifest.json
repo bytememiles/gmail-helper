@@ -12,8 +12,8 @@
     "offscreen",
     "alarms"
   ],
+  "optional_host_permissions": ["<all_urls>"],
   "host_permissions": [
-    "<all_urls>",
     "https://mail.google.com/*",
     "https://www.googleapis.com/*"
   ],

@@ -60,7 +60,23 @@ connectBtn.addEventListener("click", async () => {
   }
 });
 
-// With "<all_urls>" in host_permissions, toast does not need runtime permission prompts.
+showToast.addEventListener("change", async () => {
+  if (showToast.checked) {
+    try {
+      const granted = await chrome.permissions.request({
+        origins: ["<all_urls>"],
+      });
+      if (!granted) {
+        showToast.checked = false;
+        saveStatus.textContent =
+          'Permission for "all sites" is required for in-page toast on any tab.';
+        saveStatus.className = "status error";
+      }
+    } catch (e) {
+      showToast.checked = false;
+    }
+  }
+});
 
 saveBtn.addEventListener("click", async () => {
   const opts = {

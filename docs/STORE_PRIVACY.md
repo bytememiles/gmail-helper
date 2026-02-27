@@ -64,7 +64,7 @@ Used to run a periodic check for new Greenhouse security-code emails in Gmail (e
 ```
 • https://mail.google.com/* and https://www.googleapis.com/* — Required to call the Gmail API to list and read the user's emails. The extension only requests read-only access and only fetches messages from Greenhouse that contain a security code.
 
-• <all_urls> — Required to show the optional in-page toast on whichever tab the user currently has open when a new code is detected. The extension does not read, modify, or collect content from those sites; it only injects a small floating panel that displays the code and a Copy button. Without this permission, the toast could only be shown when the user was on a specific site.
+• <all_urls> (optional) — Listed under optional_host_permissions, not requested at install. Only if the user enables "Show in-page toast" in options, Chrome prompts once to allow access to all sites. That access is used solely to show a small floating toast on whichever tab is active when a new code arrives; the extension does not read, modify, or collect content from those sites. If the user does not enable the toast, the extension never requests this permission.
 ```
 
 ---
