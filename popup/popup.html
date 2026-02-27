@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Greenhouse Security Code</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Greenhouse Security Code</h1>
+      <div id="code-section" class="code-section">
+        <div id="code-value" class="code-value">—</div>
+        <div class="actions">
+          <button id="copy-btn" class="btn btn-primary">Copy</button>
+        </div>
+        <p id="code-time" class="code-time"></p>
+      </div>
+      <div id="no-code" class="no-code hidden">
+        <p>No code received yet.</p>
+        <p class="hint">
+          Click "Check for new code" or wait for the next check.
+        </p>
+      </div>
+      <div class="actions bottom">
+        <button id="check-now-btn" class="btn btn-secondary">
+          Check for new code
+        </button>
+      </div>
+      <p id="status" class="status"></p>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>

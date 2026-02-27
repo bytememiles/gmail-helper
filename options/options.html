@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Greenhouse Security Code Helper – Options</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Greenhouse Security Code Helper</h1>
+
+      <section>
+        <h2>Gmail</h2>
+        <p class="description">
+          Sign in with the Google account that receives Greenhouse security code
+          emails.
+        </p>
+        <button id="connect-btn" class="btn btn-primary">Connect Gmail</button>
+        <p id="gmail-status" class="status"></p>
+      </section>
+
+      <section>
+        <h2>Notifications</h2>
+        <label class="checkbox">
+          <input type="checkbox" id="show-desktop-notification" checked />
+          Show desktop notification when a new code arrives
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" id="show-toast" />
+          Show in-page toast on the current tab when a new code arrives
+        </label>
+        <p class="hint" id="toast-hint">
+          Toast will appear on the tab you're currently viewing, on any website.
+          Enabling this may ask for permission to run on all sites.
+        </p>
+
+        <div class="form-group">
+          <label for="toast-position">Toast position</label>
+          <select id="toast-position">
+            <option value="topRight">Top right</option>
+            <option value="topLeft">Top left</option>
+            <option value="bottomRight">Bottom right</option>
+            <option value="bottomLeft">Bottom left</option>
+          </select>
+        </div>
+      </section>
+
+      <section>
+        <h2>Check interval</h2>
+        <p class="description">
+          How often to check Gmail for new security code emails (minimum 1
+          minute).
+        </p>
+        <div class="form-group">
+          <label for="poll-interval">Interval</label>
+          <select id="poll-interval">
+            <option value="1">1 minute</option>
+            <option value="2">2 minutes</option>
+            <option value="5">5 minutes</option>
+          </select>
+        </div>
+      </section>
+
+      <div class="actions">
+        <button id="save-btn" class="btn btn-primary">Save options</button>
+        <p id="save-status" class="status"></p>
+      </div>
+    </div>
+    <script src="options.js"></script>
+  </body>
+</html>
